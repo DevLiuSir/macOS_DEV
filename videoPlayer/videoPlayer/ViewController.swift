@@ -10,6 +10,8 @@ import Cocoa
 import AVKit
 import AVFoundation
 
+
+
 class ViewController: NSViewController {
 
     @IBOutlet weak var playerView: AVPlayerView!
@@ -18,15 +20,15 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let url = NSURL(string: "http://images.apple.com/media/cn/iphone-7/2016/5937a0dc_edb0_4343_af1c_41ff71808fe5/films/materials/iphone7-materials-tft-cn-20160907_1536x640h.mp4") else {
+        guard let url = URL(string: "http://images.apple.com/media/cn/macbook-pro/2016/b4a9efaa_6fe5_4075_a9d0_8e4592d6146c/films/design/macbook-pro-design-tft-cn-20161026_1536x640h.mp4") else {
             return
         }
-        let player = AVPlayer(URL: url)
+        let player = AVPlayer(url: url)
         playerView.player = player
         
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
