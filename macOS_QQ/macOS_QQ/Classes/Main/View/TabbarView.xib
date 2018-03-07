@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TabbarView">
+            <connections>
+                <outlet property="contactButton" destination="aoY-GJ-sXa" id="hLm-BL-xfQ"/>
+                <outlet property="messageButton" destination="Jlg-gF-XZo" id="eMP-I5-yNM"/>
+                <outlet property="moreButton" destination="Exh-Wi-u45" id="e4C-um-3IN"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="XAt-Xg-2OR">
+            <rect key="frame" x="0.0" y="0.0" width="202" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jlg-gF-XZo" customClass="TabbarBtn" customModule="macOS_QQ" customModuleProvider="target">
+                    <rect key="frame" x="10" y="8" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Qzi-kx-gCQ"/>
+                        <constraint firstAttribute="width" constant="44" id="Vyf-C5-ncx"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="menu-message-normal" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="vzj-Nl-gx5">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-GJ-sXa" customClass="TabbarBtn" customModule="macOS_QQ" customModuleProvider="target">
+                    <rect key="frame" x="74" y="8" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="AQx-Ll-sAz"/>
+                        <constraint firstAttribute="width" constant="44" id="z5p-iM-dmX"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="menu-contact-normal" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="qaC-Z9-QgC">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-Wi-u45" customClass="TabbarBtn" customModule="macOS_QQ" customModuleProvider="target">
+                    <rect key="frame" x="138" y="8" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="qEF-tp-5D9"/>
+                        <constraint firstAttribute="width" constant="44" id="up1-Fb-Ds8"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="menu-more-normal" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="OZ9-bd-e1g">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="aoY-GJ-sXa" firstAttribute="top" secondItem="XAt-Xg-2OR" secondAttribute="top" constant="8" id="5Gz-8F-OKW"/>
+                <constraint firstItem="Jlg-gF-XZo" firstAttribute="top" secondItem="XAt-Xg-2OR" secondAttribute="top" constant="8" id="CE1-id-TUI"/>
+                <constraint firstItem="Jlg-gF-XZo" firstAttribute="leading" secondItem="XAt-Xg-2OR" secondAttribute="leading" constant="10" id="DNV-fU-wqB"/>
+                <constraint firstItem="Exh-Wi-u45" firstAttribute="top" secondItem="XAt-Xg-2OR" secondAttribute="top" constant="8" id="gvM-ge-Fi1"/>
+                <constraint firstItem="aoY-GJ-sXa" firstAttribute="leading" secondItem="Jlg-gF-XZo" secondAttribute="trailing" constant="20" id="oF2-3l-qbI"/>
+                <constraint firstItem="Exh-Wi-u45" firstAttribute="leading" secondItem="aoY-GJ-sXa" secondAttribute="trailing" constant="20" id="uMC-aS-Spd"/>
+            </constraints>
+            <point key="canvasLocation" x="-179" y="-101"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="menu-contact-normal" width="28" height="28"/>
+        <image name="menu-message-normal" width="28" height="28"/>
+        <image name="menu-more-normal" width="28" height="28"/>
+    </resources>
+</document>
