@@ -171,11 +171,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = LC;
 				TargetAttributes = {
 					6BC014C621CF674E006710E5 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -364,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = macOS_QQ/macOS_QQ.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = macOS_QQ/Info.plist;
@@ -373,7 +375,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LC.macOS-QQ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -382,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = macOS_QQ/macOS_QQ.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = macOS_QQ/Info.plist;
@@ -391,7 +394,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LC.macOS-QQ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
