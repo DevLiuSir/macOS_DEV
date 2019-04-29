@@ -1,31 +1,28 @@
 //
 //  ViewController.swift
-//  videoPlayer
+//  VideoPlayer
 //
-//  Created by Liu Chuan on 16/9/10.
-//  Copyright © 2016年 LC. All rights reserved.
+//  Created by Liu Chuan on 2020/4/7.
+//  Copyright © 2020 Liu Chuan. All rights reserved.
 //
 
 import Cocoa
-import AVKit
 import AVFoundation
-
-
+import AVKit
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var videoView: AVPlayerView!
+    
+    private var player: AVPlayer!
+    
 
-    @IBOutlet weak var playerView: AVPlayerView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let url = URL(string: "http://images.apple.com/media/cn/macbook-pro/2016/b4a9efaa_6fe5_4075_a9d0_8e4592d6146c/films/design/macbook-pro-design-tft-cn-20161026_1536x640h.mp4") else {
-            return
-        }
-        let player = AVPlayer(url: url)
-        playerView.player = player
+        playStreamMedia()
         
+        //playLocalVideo()
     }
 
     override var representedObject: Any? {
@@ -36,4 +33,51 @@ class ViewController: NSViewController {
 
 
 }
+
+//MARK: - playVideo
+extension ViewController {
+    
+    /// 播放流媒体
+    private func playStreamMedia() {
+        let videoURL = "https://www.apple.com/jobs/global/media/acvideo/2020-index/us/2020USHero-HD-cc-us-2020_1920x1080h.mp4"
+        guard let url = URL(string: videoURL) else { return }
+        player = AVPlayer(url: url)
+        videoView.player = player
+    }
+    
+    /// 播放本地视频
+    private func playLocalVideo() {
+
+        guard let videoPath = Bundle(for: type(of: self)).path(forResource: "Fall_2018", ofType: "mov") else { return }
+
+        let fileURL = NSURL.fileURL(withPath: videoPath)
+
+        let asset = AVAsset(url: fileURL)
+        let playerItem = AVPlayerItem(asset: asset)
+        player = AVPlayer(playerItem: playerItem)
+        let playerLayer = AVPlayerLayer(player: player!)
+        playerLayer.frame = self.videoView.frame
+
+        videoView.player = player
+
+        //loop
+        player!.actionAtItemEnd = .none
+
+        // add notification
+        NotificationCenter.default.addObserver(self, selector: #selector(restartVideo), name: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
+
+        player?.play()
+    }
+
+    /// 重新启动视频 (播放完成后循环播放 )
+    @objc func restartVideo() {
+        let seconds:Int64 = 0
+        let preferredTimeScale: Int32 = 1
+        let seekTime:CMTime = CMTimeMake(value: seconds, timescale: preferredTimeScale)
+        player!.seek(to: seekTime)
+        player!.play()
+    }
+
+}
+
 

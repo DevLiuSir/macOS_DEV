@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  videoPlayer
+//  VideoPlayer
 //
-//  Created by Liu Chuan on 16/9/10.
-//  Copyright © 2016年 LC. All rights reserved.
+//  Created by Liu Chuan on 2020/4/7.
+//  Copyright © 2020 Liu Chuan. All rights reserved.
 //
 
 import Cocoa
